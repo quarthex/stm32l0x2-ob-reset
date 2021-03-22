@@ -1,0 +1,22 @@
+[package]
+name = "stm32l0x2-ob-reset"
+version = "0.1.0"
+authors = ["Romain DÉOUX <romain.deoux@gmail.com>"]
+description = "Reset the Option bytes of the STM32L0x2 microchip to their factory value"
+edition = "2018"
+
+[dependencies]
+cortex-m = "0.7.2"
+cortex-m-rt = "0.6.13"
+panic-halt = "0.2.0"
+stm32l0xx-hal = { version = "0.7.0", features = ["stm32l0x2"] }
+volatile-register = "0.2.0"
+
+[[bin]]
+name = "stm32l0x2-ob-reset"
+bench = false
+test = false
+
+[profile.release]
+codegen-units = 1
+lto = true
